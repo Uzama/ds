@@ -42,7 +42,7 @@ func (s *stack) Pop() (interface{}, error) {
 		defer s.lock.Unlock()
 	}
 
-	if len(s.s) == 0 {
+	if s.len == 0 {
 		return nil, errors.New("stack is empty")
 	}
 
