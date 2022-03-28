@@ -12,7 +12,7 @@ type stack struct {
 	enableLock bool
 }
 
-// if the stack use as a global storage, enabling lock is must
+// if the stack is used as a global storage, enabling lock is must
 func NewSatck(enableLock bool) Stack {
 
 	s := &stack{
