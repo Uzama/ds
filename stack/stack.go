@@ -54,3 +54,15 @@ func (s *stack) Pop() (interface{}, error) {
 
 	return value, nil
 }
+
+func (s *stack) Len() int {
+
+	if s.enableLock {
+		s.lock.Lock()
+		defer s.lock.Unlock()
+	}
+
+	len := s.len
+
+	return len
+}
